@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mua Vé Thành Công</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      display: inline-block;
+      max-width: 400px;
+    }
+    h1 {
+      color: #28a745;
+    }
+    .info {
+      margin-top: 20px;
+      text-align: left;
+      font-size: 1.1em;
+    }
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Mua Vé Thành Công!</h1>
+    <p>Cảm ơn bạn đã đặt vé. Thông tin của bạn:</p>
+    <div class="info" id="thongtin"></div>
+    <a href="muave.html" class="btn">← Đặt vé khác</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const ten = params.get("ten");
+    const sdt = params.get("sdt");
+    const ngay = params.get("ngay");
+    const loaive = params.get("loaive");
+
+    document.getElementById("thongtin").innerHTML = `
+      👤 <strong>Họ tên:</strong> ${ten}<br>
+      📱 <strong>SĐT:</strong> ${sdt}<br>
+      📅 <strong>Ngày đi:</strong> ${ngay}<br>
+      🎫 <strong>Loại vé:</strong> ${loaive}
+    `;
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đặt Vé</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #c2e9fb, #f9f9f9);
+      text-align: center;
+      padding: 50px;
+    }
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      display: inline-block;
+      width: 300px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .btn-back {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background-color: #6c757d;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .btn-back:hover {
+      background-color: #495057;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚌 Đặt Vé Du Lịch</h1>
+  <form onsubmit="handleSubmit(event)">
+    <input type="text" id="ten" placeholder="Họ và tên" required />
+    <input type="tel" id="sdt" placeholder="Số điện thoại" required />
+    <input type="date" id="ngay" required />
+    <select id="loaive">
+      <option value="Vé thường">Vé thường</option>
+      <option value="Vé VIP">Vé VIP</option>
+    </select>
+    <button type="submit">Mua vé</button>
+  </form>
+
+  <!-- Nút quay về trang chủ -->
+  <div style="margin-top: 30px;">
+    <a href="index.html" class="btn-back">← Trở về trang chủ</a>
+  </div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const ten = document.getElementById('ten').value;
+      const sdt = document.getElementById('sdt').value;
+      const ngay = document.getElementById('ngay').value;
+      const loaive = document.getElementById('loaive').value;
+
+      const params = new URLSearchParams({ ten, sdt, ngay, loaive });
+      window.location.href = 'xacnhan.html?' + params.toString();
+    }
+  </script>
+</body>
+</html>

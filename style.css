@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Tai+Heritage+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
+:root{
+
+    --main-color:rgb(184, 28, 177);
+    --subtext:'Roboto', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tai Heritage Pro', serif;
+}
+UL{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.video-container
+{
+height: 100vh;
+width: 100vw;
+}
+.video-container video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+header{
+    position: relative;
+}
+.header-top i{
+    position: fixed;
+    margin: 12px;
+    font-size: 35px;
+    color: var(--main-color);
+    cursor: pointer;
+    z-index: 1;
+}
+.header-top ul {
+    position: fixed;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    padding: 150px 0 0 50px;
+    background-color: var(--main-color);
+    display: none;
+    opacity: 0;
+    z-index: 1 ;
+    background: none;
+
+}
+.header-top ul.active{
+    display: block;
+    opacity: 1;
+
+}
+.header-top ul li{
+    margin-bottom: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    animation: fade 0.3s linear backwards;
+    animation-delay: calc(0.3s * var(--x));
+}
+@keyframes fade{
+    0%{
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+}
+.header-top ul li a{
+    display: block;
+    background-color: var(--main-color );
+    padding: 12px;
+    transition:  all 0.3s ease;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #fff;
+}
+.header-top ul li a:hover{
+     color: brown;
+}
+.header-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    background-color: rgba(255, 255,255, 0);
+    padding: 150px 50px 0 50px;
+    text-align: center;
+    width: 400px;
+}
+.header-content> h1 {
+color:rgb(20, 142, 235);}
+
+
+form{
+    padding: 10px 30px;
+    background-color:rgb(247, 255, 255) ;
+    margin-top: -10px;
+}
+form h1{
+    color: #333;
+    font-size: 27px;
+}
+form select,input {
+    
+    width: 100%;
+    height: 35px;
+    padding-left: 12px;
+    outline: none;
+    background-color: #dddd;
+    border: none;
+    text-align: left;
+}
+form p{
+    text-align: left;
+    color: var(--main-color);
+    margin: 8px 0 3px;
+}
+form button{
+    height: 35px;
+    width: 150px;
+    background-color: var(--main-color);
+    color: #fff;
+    margin-top: 20px;
+    border: none;
+    cursor:pointer;
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+form button:hover{
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    color:var(--main-color);
+}
+/*------------------nice place-------------*/
+.nice-place{
+        padding: 100px 0;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container{
+    max-width: 1024px;
+    margin: auto;
+}
+.nice-place-item{
+    width: 30%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+.nice-place-item:hover .nice-place-text{
+    transform: translateX(0%);
+}
+.nice-place-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+.nice-place-text{
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+    padding: 12px;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(255,255,255,0));
+    transform: translateX(-100%);
+    transition: all 0.5 ease;
+}
+.nice-place-text h2{
+    color: var(--main-color);
+}
+.nice-place-text i{
+    color: yellow;
+}
+.nice-place-text p{
+        color: #fff;
+        margin: 12px 0;
+}
+.nice-place-text button{
+    height: 30px;
+    width: 100px;
+    background-color: var(--main-color);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.5 ease;
+}
+.bt{
+    height: 30px;
+    width: 100px;
+    background-color: var(--main-color);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.5 ease;
+}
+.nice-place-text button:hover{
+    background-color: tomato;
+}
+.nice-place h1{
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--main-color);
+    position: relative;
+}
+.h1-style{
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--main-color);
+    position: relative;
+}
+.nice-place h1::before{
+    position: absolute;
+    content: "";
+    height: 5px;
+    width: 150px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.nice-place h1::after{
+    position: absolute;
+    content: "\2600";
+    width: 40px;
+    height: 20px;
+    color: red;
+    background-color: #fff;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/*-------about-------*/
+.about{
+    padding: 10% 0;
+}
+.about h1{
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--main-color);
+    position: relative;
+}
+.about h1::before{
+    position: absolute;
+    content: "";
+    height: 5px;
+    width: 150px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.about h1::after{
+    position: absolute;
+    content: "\2600";
+    width: 40px;
+    height: 20px;
+    color: red;
+    background-color: #fff;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.about-content-left{
+    width: 50%;
+}
+.about-content-left img{
+    width: 100%;
+}
+.about-content-right{
+    width: 50%;
+    padding-left: 50px;
+}
+.about-content-right h2{
+    font-family: var(--subtext);
+    font-weight: normal;
+    color: var(--main-color);
+}
+.about-content-right p{
+    font-size: 18px;
+    margin: 20px 0;
+    font-family: var(--subtext);
+}
+.about-content-right button{
+    height: 30px;
+    width: 100px;
+    background-color: var(--main-color);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.5 ease;
+}
+.about-content-right button:hover{
+    background-color: tomato;
+}
+.sevice{
+    margin-top: 30px;
+
+}
+.sevice-item{
+    width: 30%;
+    text-align: center;
+    padding: 20px;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.sevice-item:hover{
+    box-shadow: 2px 2px 10px black;
+}
+.sevice-item img{
+    width: 150px;
+    margin-bottom: 6px;
+}
+/*reposive*/
+@media(max-width: 575px){
+    .header-content{
+        width: 100%;
+
+    }
+    .nice-place{
+        padding: 50px 0;
+    }
+    .nice-place-item{
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+    .about{
+        padding: 20px 0;
+    }
+    .about-content-left{
+        width: 100%;
+    }
+    .about-content-right{
+        width: 100%;
+        padding: 0 12px;
+    }
+    .sevice-item{
+        width: 100%;
+        margin-bottom: 20px;
+        margin: 12px;
+    }
+
+}

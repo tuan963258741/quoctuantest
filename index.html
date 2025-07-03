@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/72e5f8a4f1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <i class="fa-solid fa-bars"></i>
+            <ul>
+                <li style="--x:1;"><a href="">Trang Chủ</a></li>
+                <li style="--x:2;"><a href="dacdiem.html">đặc điểm</a></li>
+                <li style="--x:3;"><a href="nhansu.html">nhân sự</a></li>
+                <li style="--x:5;"><a href="danhgia.html"> đánh giá</a></li>
+                <li style="--x:6;"><a href="lienhe.html">liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="video-container">
+            <video src="y2mate.com - Vietnam Travel Documentary  Motivational Video In 4K Ultra HD  Phim tài liệu du lịch Việt Nam_1080p.mp4" autoplay muted loop></video>
+        </div>
+        <div class="header-content">
+            <h1>DU LỊCH THÔI</h1>
+<form id="searchForm">
+            <h1>NƠI MÀ BẠN MUỐN ĐẾN</h1>
+            <p>Địa điểm</p>
+            <select id="destination" required>
+            <option value="">-chọn nơi mà bạn muốn-</option>
+            <option value="Hà Nội">Hà nội</option>
+            <option value="Đà Lạt">Đà lạt</option>
+            <option value="Đà Nẵng">Đà nẵng</option>
+            </select>
+            <p>Số người</p>
+            <input type="number" min="1" id="people" placeholder="số người đi cùng bạn" required>
+            <p>Ngày đi</p>
+            <input type="date" id="startDate" required>
+            <p>Ngày về</p>
+            <input type="date" id="endDate" required><br>
+            <button type="submit">Tìm kiếm</button>
+</form>
+
+    <!-- Kết quả chuyến đi -->
+<div id="result" style="display:none; background:#fff; padding:10px; margin-top:20px; max-width:500px;">
+    <h2>Thông tin chuyến đi</h2>
+    <p id="tripInfo"></p>
+    <p id="tripPrice"></p>
+    <p id="tripSeats"></p>
+</div>
+
+<!-- Form nhập thông tin khách hàng -->
+<div id="customerForm" style="display:none; background:#fff; padding:10px; margin-top:20px; max-width:500px;">
+    <h2>Thông tin khách hàng</h2>
+    <input type="text" id="customerName" placeholder="Họ và tên" required>
+    <input type="tel" id="customerPhone" placeholder="Số điện thoại" required>
+    <button id="confirmBtn">Xác nhận mua vé</button>
+</div>
+
+<!-- Hóa đơn -->
+<div id="invoice" style="display:none; background:#d4edda; color:#155724; padding:10px; margin-top:20px; max-width:500px;">
+    <h2>Hóa đơn đặt vé</h2>
+    <p id="invoiceDetails"></p>
+    <button id="backBtn">Quay lại trang chủ</button>
+</div>
+        </div>
+    </header>
+<!------------nơi tốt nhất --------->
+<section class="nice-place">
+    <div class="container">
+        <h1>địa điểm nổi bật</h1>
+        <div class="nice-place-content row">
+            <div class="nice-place-item">
+                <div class="nice-place-img">
+                        <img src="trung-tam-thanh-pho-ha-noi-603da1f235b38.jpg" alt="">
+                </div>
+                <div class="nice-place-text">
+                    <h2>tour hà nội</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <p>Hà Nội là thủ đô việt nam</p>
+                    <button><a href="muave.html">mua vé</a></button>
+                </div>
+            </div>
+            <div class="nice-place-item">
+                <div class="nice-place-img">
+                        <img src="dalat.jpg" alt="">
+                </div>
+                <div class="nice-place-text">
+                    <h2>tour đà lạt</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <p>Đà Lạt là thành phố sương mù</p>
+                    <button><a href="muave.html">mua vé</a></button>
+                </div>
+            </div>
+            <div class="nice-place-item">
+                <div class="nice-place-img">
+                        <img src="du-lich-da-nang.jpg" alt="">
+                </div>
+                <div class="nice-place-text">
+                    <h2>tour đà nẵng</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <p>Đà Nẵng là nơi ngập tràn niềm vui </p>
+                    <button><a href="muave.html">mua vé</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------about --------->
+<section class="about">
+    <div class="container">
+        <h1>Về chúng tôi</h1>
+        <div class="about-content row">
+            <div class="about-content-left">
+                <img src="about.png">
+            </div>
+            <div class="about-content-right">
+                <h2>Tại sao bạn nên chọn chúng tôi?</h2>
+                <p>chúng tôi tuy không phải lá một tập đoàn lớn nhưng chúng tôi hứa hẹn chuyến đi của bạn sẽ là một chuyến đi đáng nhớ với giá cả phải chăng</p>
+                <button><a href="gioithieu.html">tìm hiểu thêm</a></button>
+            </div>
+        </div>
+        <div class="service row">
+            <div class="sevice-item">
+                <img src="lichtrinh.jpg" alt="">
+                <p>lịch trình đúng hẹn</p>
+            </div>
+            <div class="sevice-item">
+                <img src="antoan.jpg" alt="">
+                <p>an toàn tuyệt đối</p>
+            </div>
+            <div class="sevice-item">
+                <img src="giatien.jpg" alt="">
+                <p>giá tiền phải chăng</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script src="script.js"></script>
+</body>
+</html>
